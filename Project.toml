@@ -1,0 +1,13 @@
+name = "XLStats"
+uuid = "142e2fd4-51ad-4146-aa9f-62d7edce9ef7"
+authors = ["Leandro Martinez <leandro@iqm.unicamp.br> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
