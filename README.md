@@ -62,7 +62,7 @@ julia> scatter(x,y,label="",xlabel="Euclidian distance",ylabel="Maximum score1")
 ```
 produces:
 
-![fig1](../test/plots/score1_vs_deuc.png)
+![fig1](./test/plots/score1_vs_deuc.png)
 
 
 
