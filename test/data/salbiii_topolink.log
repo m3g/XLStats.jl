@@ -1,0 +1,769 @@
+
+  ######################################################## TOPOLINK #######################################################
+              L. Martinez, Institute of Chemistry - University of Campinas. http://leandro.iqm.unicamp.br
+
+                                                                                                         Version 18.170 
+
+  PDB input file: cristalografica.pdb
+  Will stop PDB reading when ENDMDL is found. 
+  Only heavy atoms will be considered. 
+
+  Links will not be written as PDB files. 
+
+  Printing option:        0
+  Leave when first valid link is found:  F
+  Link bond distance:    1.5000000
+  Link bond force-constant:   10.0000000
+  VdW radius for volume exclusion:    3.0000000
+  Path energy constant:   10.0000000
+  Cutoff for observed scores:   -1.0000000
+  Number of trials for link search:      200
+  Number of repeated best links to find until quit:        5
+  Maximum number of function evaluations of CGNewton:      500
+  Maximum number of CG iterations in CGNewton:      100
+  Seed for random number generator:    13824
+
+  Number of experiments:        3
+
+  Number of atoms read from PDB file:     1035
+  Number of chains found in PDB file:            1
+
+  -------------------------------------------------------------------------------------------------------------------------
+  Experiment: SDS
+
+  -------------------------------------------------------------------------------------------------------------------------
+  Experiment: basic
+
+  -------------------------------------------------------------------------------------------------------------------------
+  Experiment: 0length
+
+  -------------------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------------------
+
+  Number of atoms that might be involved in reactions, according link types:       37
+
+  All reactive atoms, according to observations: 
+
+  Number of reactive pairs according to sequence: 
+    Experiment SDS:   105
+    Experiment basic:   231
+    Experiment 0length:   308
+  Total number of unique reactive pairs, according to link types:          644
+
+  Number of reactive pairs according to observations: 
+    Experiment SDS:     0
+    Experiment basic:     0
+    Experiment 0length:     0
+  Total number of unique reactive pairs, according to observations:            0
+
+  List of reactive atom pairs, according to observations: 
+
+  Number of atoms accessible to solvent:          899
+  Number of residues accessible to solvent:          132
+
+  -------------------------------------------------------------------------------------------------------------------------
+        RESIDUE1   ATOM1 RESIDUE2   ATOM2 EUCLDIST  TOPODIST OBSERVED    DMIN      DMAX        RESULT  OBSRES REACRES RA AA
+  -------------------------------------------------------------------------------------------------------------------------
+  LINK: MET  A    1 N    LYS  A    6 CB      6.237     6.538   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A    8 CB      9.479    19.066   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A   17 CB     16.371    18.682   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A   42 CB     27.494   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: MET  A    1 N    SER  A   57 CB     26.883   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: MET  A    1 N    SER  A   71 CB     14.632    29.739   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A   77 CB      6.178     6.580   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    SER  A   78 CB      9.794    23.079   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A   99 CB     29.940   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: MET  A    1 N    LYS  A  113 CB      7.722    15.050   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    SER  A  116 CB     12.809    18.342   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: MET  A    1 N    SER  A  131 CB     36.762   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: MET  A    1 N    SER  A  132 CB     40.279   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: MET  A    1 N    SER  A  133 CB     42.153   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A    4 CB      5.882     9.237   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A    6 CB      4.157     5.045   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A    8 CB      9.153    14.448   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A    9 CB      9.273    11.406   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   13 CB     14.709    18.497   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A   17 CB     20.557    25.470   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   20 CB     24.993    29.275   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A   22 CB     25.340    30.183   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A   24 CB     26.459    29.741   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   28 CB     20.818    24.294   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   32 CB     23.267    27.322   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   37 CB     25.627    36.466   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A   38 CB     26.609   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A   42 CB     33.242   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   46 CB     27.300    34.066   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   53 CB     32.108   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A   57 CB     32.792   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   62 CB     34.121   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   66 CB     25.277    29.152   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A   71 CB     14.806    19.610   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A   75 CB     12.945    19.073   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A   77 CB     10.828    17.763   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A   78 CB     13.028    26.627   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A   86 CB     31.415   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A   92 CB     44.738   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A   99 CB     33.022   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A  104 CB     19.569   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   GLU  A  111 CB     12.215    15.001   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   LYS  A  113 CB     14.569    20.820   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A  115 CB     16.681    23.631   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A  116 CB     19.143    27.572   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A    3 CB   ASP  A  125 CB     31.639   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: ASP  A    3 CB   SER  A  131 CB     39.882   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A  132 CB     43.075   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A    3 CB   SER  A  133 CB     44.102   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A    6 CB      7.489    14.310   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A    8 CB      6.270     7.627   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A    9 CB      9.569    16.135   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   13 CB     15.063    23.001   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A   17 CB     20.608    29.467   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   20 CB     24.813    31.880   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A   22 CB     25.829    36.334   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A   24 CB     27.795    35.518   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   28 CB     22.602    30.776   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   32 CB     24.973    31.571   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   37 CB     23.290    31.805   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A   38 CB     24.090   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A   42 CB     30.393    37.788   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   46 CB     26.916    34.444   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   53 CB     31.453   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A   57 CB     31.386   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   62 CB     32.251   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   66 CB     21.849    26.230   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A   71 CB      9.283    12.019   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A   75 CB     10.521    17.113   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A   77 CB     10.278    17.855   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A   78 CB      9.788    18.090   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A   86 CB     28.308    34.889   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A   92 CB     41.541   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A   99 CB     29.151    33.897   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A  104 CB     16.197   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   GLU  A  111 CB     15.887    22.860   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   LYS  A  113 CB     16.472    28.670   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A  115 CB     16.743    23.931   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A  116 CB     17.825    26.813   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    4 CB   ASP  A  125 CB     27.229    30.674   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A    4 CB   SER  A  131 CB     36.864   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A  132 CB     40.269   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    4 CB   SER  A  133 CB     41.029   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A    8 CB      7.376    13.011   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A    9 CB      5.680     7.978   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   13 CB     10.750    11.605   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A   17 CB     16.696    18.218   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   20 CB     21.013    23.309   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A   22 CB     21.394    23.970   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A   24 CB     22.745    23.623   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   28 CB     17.456    18.036   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   32 CB     21.512    25.020   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   37 CB     24.421    37.847   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A   38 CB     24.665   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A   42 CB     31.851   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   46 CB     25.870    35.999   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   53 CB     29.427   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A   57 CB     29.822   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   62 CB     30.691    36.546   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   66 CB     22.602    26.264   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A   71 CB     14.839    23.258   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A   75 CB     14.856    23.430   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A   77 CB     11.494    21.738   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A   78 CB     13.485    29.880   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A   86 CB     28.525    33.880   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A   92 CB     41.878   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A   99 CB     30.643   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A  104 CB     17.804   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   GLU  A  111 CB     10.790    14.405   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   LYS  A  113 CB     12.456    15.953   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A  115 CB     15.799    26.706   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A  116 CB     18.255    30.703   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    6 CB   ASP  A  125 CB     30.139   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: LYS  A    6 CB   SER  A  131 CB     36.801   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A  132 CB     39.833   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    6 CB   SER  A  133 CB     41.009   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A    9 CB      5.217     8.867   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   13 CB      9.674    18.860   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   LYS  A   17 CB     15.011    25.140   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   20 CB     18.829    22.883   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A   22 CB     20.310    28.467   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A   24 CB     23.068    31.571   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   28 CB     18.779    27.784   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   32 CB     23.303    40.794   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   37 CB     21.053    34.544   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A   38 CB     20.458   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   LYS  A   42 CB     27.643    39.478   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   46 CB     24.984   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   53 CB     27.394   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A   57 CB     26.509   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   62 CB     26.343    30.038   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   66 CB     16.208    18.175   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A   71 CB      8.487    13.032   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A   75 CB     13.917    21.897   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   LYS  A   77 CB     11.910    26.964   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A   78 CB     10.639    20.499   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A   86 CB     22.672    26.159   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A   92 CB     36.143   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   LYS  A   99 CB     24.134    28.227   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A  104 CB     12.314   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A    8 CB   GLU  A  111 CB     15.616    27.899   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   LYS  A  113 CB     14.707    30.753   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A  115 CB     15.976    33.032   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A  116 CB     16.556    29.629   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   ASP  A  125 CB     23.632    30.584   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: LYS  A    8 CB   SER  A  131 CB     31.083    32.265   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A  132 CB     34.338    35.627   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A    8 CB   SER  A  133 CB     35.241    35.474   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   13 CB      6.723     8.406   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   LYS  A   17 CB     12.895    15.926   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   20 CB     16.502    19.267   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A   22 CB     17.811    20.938   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A   24 CB     20.464    21.760   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   28 CB     16.418    17.010   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   32 CB     22.719    25.814   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   37 CB     23.696    41.108   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A   38 CB     22.640   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   LYS  A   42 CB     30.362   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   46 CB     26.134   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   53 CB     27.586   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A   57 CB     26.841   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   62 CB     26.151    29.922   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   66 CB     17.635    19.275   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A   71 CB     13.664    20.890   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A   75 CB     17.648    31.171   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   LYS  A   77 CB     14.355    29.155   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A   78 CB     14.673    29.346   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A   86 CB     23.799    26.462   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A   92 CB     37.321   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   LYS  A   99 CB     26.249    29.735   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A  104 CB     15.410   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A    9 CB   GLU  A  111 CB     14.035    16.850   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   LYS  A  113 CB     13.843    16.575   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A  115 CB     17.318    28.222   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A  116 CB     18.818    34.135   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   ASP  A  125 CB     27.040    33.420   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A    9 CB   SER  A  131 CB     31.732    32.918   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A  132 CB     34.533    36.010   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A    9 CB   SER  A  133 CB     35.525    35.903   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   LYS  A   17 CB      6.223     7.501   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   20 CB     10.286    11.335   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A   22 CB     11.126    14.420   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A   24 CB     14.052    16.173   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   28 CB     11.036    11.556   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   32 CB     19.276    22.843   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   37 CB     21.017    39.200   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A   38 CB     18.964   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   LYS  A   42 CB     27.054   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   46 CB     22.581    34.583   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   53 CB     21.981    35.487   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A   57 CB     21.063    39.490   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   62 CB     20.549    25.637   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   66 CB     15.384    21.789   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A   71 CB     16.593   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A   75 CB     20.482    36.800   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   LYS  A   77 CB     16.113    30.822   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A   78 CB     16.477   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A   86 CB     19.857    25.995   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A   92 CB     32.796   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   LYS  A   99 CB     23.224    29.729   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A  104 CB     13.647   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   13 CB   GLU  A  111 CB     13.902    14.937   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   LYS  A  113 CB     11.750    13.013   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A  115 CB     15.989    26.304   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A  116 CB     17.185    32.203   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   ASP  A  125 CB     24.965   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: GLU  A   13 CB   SER  A  131 CB     27.525    30.877   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A  132 CB     30.313    32.918   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   13 CB   SER  A  133 CB     32.125    34.232   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   20 CB      5.312     7.588   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A   22 CB      5.330     6.371   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A   24 CB      9.279    13.664   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   28 CB      8.937    10.870   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   32 CB     18.321    22.586   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   37 CB     19.796    41.495   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A   38 CB     16.603   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   LYS  A   42 CB     24.599   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   46 CB     20.715    35.622   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   53 CB     17.333    31.806   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A   57 CB     15.864    32.274   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   62 CB     15.358    18.872   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   66 CB     14.682    26.335   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A   71 CB     20.292   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A   75 CB     24.292    38.834   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   LYS  A   77 CB     19.700    33.888   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A   78 CB     19.761   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A   86 CB     16.699    26.250   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A   92 CB     28.449   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   LYS  A   99 CB     20.847    32.500   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A  104 CB     14.015   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   17 CB   GLU  A  111 CB     17.025    17.986   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   LYS  A  113 CB     13.434    15.530   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A  115 CB     17.233    29.364   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A  116 CB     17.714    34.601   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   ASP  A  125 CB     23.561   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: LYS  A   17 CB   SER  A  131 CB     23.692    27.431   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A  132 CB     26.435    29.796   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   17 CB   SER  A  133 CB     29.089    33.888   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A   22 CB      4.556     5.423   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A   24 CB     10.417    13.808   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   28 CB     12.900    15.697   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   32 CB     22.761    27.685   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   37 CB     23.430   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A   38 CB     19.296    36.115   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   LYS  A   42 CB     26.969    38.057   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   46 CB     24.655    37.148   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   53 CB     19.015    26.162   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A   57 CB     16.135    24.318   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   62 CB     12.564    15.883   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   66 CB     14.337    16.326   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A   71 CB     23.790    32.518   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A   75 CB     29.189   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   LYS  A   77 CB     24.849    39.819   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A   78 CB     24.460    41.036   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A   86 CB     15.194    19.324   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A   92 CB     26.031    35.052   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   LYS  A   99 CB     20.075    23.195   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A  104 CB     17.401   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   GLU  A  111 CB     22.061    24.471   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   LYS  A  113 CB     18.651    22.253   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A  115 CB     22.371   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A  116 CB     22.463   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   20 CB   ASP  A  125 CB     24.673    33.994   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   20 CB   SER  A  131 CB     20.596    22.169   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A  132 CB     22.631    23.757   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   20 CB   SER  A  133 CB     25.283    26.158   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A   24 CB      5.875     7.352   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   28 CB      9.414    12.144   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   32 CB     19.327    25.215   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   37 CB     22.429   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A   38 CB     18.812    33.535   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   LYS  A   42 CB     26.225   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   46 CB     22.005    31.912   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   53 CB     16.321    22.147   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A   57 CB     14.793    21.909   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   62 CB     14.043    16.728   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   66 CB     17.854    22.787   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A   71 CB     25.483   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A   75 CB     29.080   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   LYS  A   77 CB     24.226   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A   78 CB     24.605   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A   86 CB     17.944    24.290   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A   92 CB     27.812   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   LYS  A   99 CB     22.679    29.042   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A  104 CB     18.282   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   GLU  A  111 CB     20.167    22.482   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   LYS  A  113 CB     16.567    20.221   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A  115 CB     20.654    31.431   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A  116 CB     21.173   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   22 CB   ASP  A  125 CB     26.291   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: ASP  A   22 CB   SER  A  131 CB     23.418    25.569   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A  132 CB     25.643    27.281   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   22 CB   SER  A  133 CB     28.871    30.679   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   28 CB      6.575     8.133   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   32 CB     15.554    17.251   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   37 CB     22.537   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A   38 CB     19.935    32.460   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   LYS  A   42 CB     26.648    34.390   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   46 CB     19.692    25.485   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   53 CB     14.690    18.773   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A   57 CB     15.494    20.692   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   62 CB     17.975    19.828   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   66 CB     22.960    29.061   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A   71 CB     28.377   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A   75 CB     29.669    38.996   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   LYS  A   77 CB     24.329    33.971   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A   78 CB     25.736   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A   86 CB     22.607    28.054   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A   92 CB     31.390    40.669   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   24 CB   LYS  A   99 CB     27.035    34.667   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A  104 CB     20.819    39.738   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   GLU  A  111 CB     18.597    20.125   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   LYS  A  113 CB     15.119    17.638   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A  115 CB     19.563    26.578   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A  116 CB     20.765    35.574   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   ASP  A  125 CB     29.473   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: ASP  A   24 CB   SER  A  131 CB     28.082    29.333   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A  132 CB     30.448    31.051   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   24 CB   SER  A  133 CB     34.119    34.934   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   32 CB     10.865    13.163   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   37 CB     19.702    31.715   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A   38 CB     18.505    39.314   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   LYS  A   42 CB     25.482    34.400   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   46 CB     16.643    23.723   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   53 CB     15.796    20.827   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A   57 CB     17.759    26.463   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   62 CB     21.501    28.239   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   66 CB     22.886    30.871   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A   71 CB     24.342   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A   75 CB     23.909    30.133   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   LYS  A   77 CB     18.338    25.124   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A   78 CB     20.533   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A   86 CB     24.144    34.967   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A   92 CB     34.499   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   28 CB   LYS  A   99 CB     27.883    39.064   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A  104 CB     18.009   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   28 CB   GLU  A  111 CB     12.102    13.799   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   LYS  A  113 CB      8.661    10.602   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A  115 CB     13.909    20.046   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A  116 CB     16.051    25.077   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   ASP  A  125 CB     28.725   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: GLU  A   28 CB   SER  A  131 CB     31.115    37.438   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A  132 CB     34.039    38.853   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   28 CB   SER  A  133 CB     37.307    41.444   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   37 CB     16.731    21.484   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A   38 CB     18.581    28.137   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   LYS  A   42 CB     22.939    27.442   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   46 CB      9.753    13.363   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   53 CB     15.594    19.309   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A   57 CB     20.553    26.496   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   62 CB     28.109   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   66 CB     29.426   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A   71 CB     26.599    31.529   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A   75 CB     21.619    23.816   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   LYS  A   77 CB     16.554    18.163   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A   78 CB     19.772    23.574   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A   86 CB     30.101   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A   92 CB     39.132   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   LYS  A   99 CB     32.569   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A  104 CB     20.366   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   GLU  A  111 CB     12.317    12.747   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   LYS  A  113 CB      9.104    10.632   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A  115 CB      9.851    11.472   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A  116 CB     12.519    15.416   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   32 CB   ASP  A  125 CB     30.509    40.050   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YN
+  LINK: GLU  A   32 CB   SER  A  131 CB     37.604   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A  132 CB     41.261   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   32 CB   SER  A  133 CB     44.967   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A   38 CB      5.736    17.625   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   LYS  A   42 CB      8.040    15.962   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A   46 CB      9.236    13.280   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A   53 CB     13.767    16.026   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A   57 CB     15.248    18.692   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A   62 CB     22.485    28.599   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A   66 CB     21.291    35.553   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A   71 CB     18.785    23.669   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A   75 CB     17.973    18.773   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   LYS  A   77 CB     16.280    18.014   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A   78 CB     14.338    16.338   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A   86 CB     20.900   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A   92 CB     28.701    32.689   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   LYS  A   99 CB     20.789    34.556   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A  104 CB     10.569    26.967   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   GLU  A  111 CB     21.816    26.011   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   LYS  A  113 CB     16.973    23.697   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A  115 CB     11.748    13.907   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A  116 CB      7.446     8.354   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   37 CB   ASP  A  125 CB     15.517    22.750   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   37 CB   SER  A  131 CB     28.728   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A  132 CB     33.343   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   37 CB   SER  A  133 CB     36.725   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   LYS  A   42 CB      8.157    11.795   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A   46 CB     12.266    17.954   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A   53 CB     11.486    14.906   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A   57 CB     10.666    11.335   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A   62 CB     16.852    20.489   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A   66 CB     16.904    41.901   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A   71 CB     18.827    36.691   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   ASP  A   75 CB     21.146   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   LYS  A   77 CB     18.936   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A   78 CB     16.547    37.943   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A   86 CB     15.434   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   ASP  A   92 CB     23.397    25.935   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   LYS  A   99 CB     15.803   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   ASP  A  104 CB      8.740    11.636   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   GLU  A  111 CB     23.219   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   LYS  A  113 CB     17.993   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   ASP  A  115 CB     14.647   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A  116 CB     10.921    28.480   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   ASP  A  125 CB     12.327    24.925   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: ASP  A   38 CB   SER  A  131 CB     23.097    30.924   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A  132 CB     27.668    33.178   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   38 CB   SER  A  133 CB     31.195   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A   46 CB     13.964    17.659   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A   53 CB     14.388    14.770   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A   57 CB     14.537    14.601   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A   62 CB     21.979    23.639   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A   66 CB     23.453    30.538   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A   71 CB     24.364    27.904   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   ASP  A   75 CB     25.255    29.017   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   LYS  A   77 CB     24.189    30.077   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A   78 CB     21.597    26.719   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A   86 CB     20.620   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   42 CB   ASP  A   92 CB     24.477    25.453   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   LYS  A   99 CB     19.455    29.374   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   ASP  A  104 CB     15.686    22.121   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   GLU  A  111 CB     29.552    36.762   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   LYS  A  113 CB     24.462    39.635   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   ASP  A  115 CB     19.678    26.160   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A  116 CB     15.477    22.021   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   ASP  A  125 CB     13.619    16.844   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: LYS  A   42 CB   SER  A  131 CB     26.706    33.700   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A  132 CB     31.408    35.948   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   42 CB   SER  A  133 CB     35.205    41.900   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   GLU  A   53 CB     11.270    13.909   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A   57 CB     16.326    20.304   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   GLU  A   62 CB     25.614    31.823   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   GLU  A   66 CB     27.486   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A   71 CB     25.261    29.136   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   ASP  A   75 CB     21.353    23.040   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   LYS  A   77 CB     17.969    19.388   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A   78 CB     18.831    22.069   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   GLU  A   86 CB     26.696   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   ASP  A   92 CB     33.834   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   LYS  A   99 CB     27.919   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   ASP  A  104 CB     17.309    31.552   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   GLU  A  111 CB     19.359    21.946   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   LYS  A  113 CB     14.775    19.756   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   ASP  A  115 CB     10.787    12.914   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A  116 CB      9.508    12.877   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   46 CB   ASP  A  125 CB     24.141    31.476   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   46 CB   SER  A  131 CB     33.996   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A  132 CB     38.221   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   46 CB   SER  A  133 CB     42.215   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A   57 CB      6.538     8.053   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   GLU  A   62 CB     16.711    20.812   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   GLU  A   66 CB     23.906    35.755   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A   71 CB     28.547   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   53 CB   ASP  A   75 CB     28.958    35.343   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   LYS  A   77 CB     25.051    33.404   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A   78 CB     24.876    33.741   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   GLU  A   86 CB     20.540    35.077   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   ASP  A   92 CB     25.372    29.297   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   LYS  A   99 CB     22.910    39.436   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   ASP  A  104 CB     18.365   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   53 CB   GLU  A  111 CB     24.555    30.494   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   LYS  A  113 CB     19.302    27.603   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   ASP  A  115 CB     18.375    27.348   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A  116 CB     16.772    25.881   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   ASP  A  125 CB     22.319    30.517   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   53 CB   SER  A  131 CB     25.927    29.333   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A  132 CB     29.630    31.562   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   53 CB   SER  A  133 CB     34.320   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   57 CB   GLU  A   62 CB     10.532    14.755   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   GLU  A   66 CB     19.316    33.974   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   SER  A   71 CB     27.260    40.228   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: SER  A   57 CB   ASP  A   75 CB     30.337    41.958   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: SER  A   57 CB   LYS  A   77 CB     26.825    39.924   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   SER  A   78 CB     25.580    40.202   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: SER  A   57 CB   GLU  A   86 CB     14.676    28.922   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   ASP  A   92 CB     19.154    24.157   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   LYS  A   99 CB     17.326    34.090   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   ASP  A  104 CB     16.851    17.971   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   GLU  A  111 CB     27.204    36.213   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   LYS  A  113 CB     21.871    32.917   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   ASP  A  115 CB     21.304    33.908   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   SER  A  116 CB     19.116    32.443   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   ASP  A  125 CB     18.545    28.136   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: SER  A   57 CB   SER  A  131 CB     19.411    23.054   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   SER  A  132 CB     23.135    25.276   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   57 CB   SER  A  133 CB     27.866    32.187   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   GLU  A   66 CB     14.145    16.731   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   SER  A   71 CB     27.638    36.562   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   ASP  A   75 CB     34.246   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   62 CB   LYS  A   77 CB     31.006   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   62 CB   SER  A   78 CB     28.992   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   62 CB   GLU  A   86 CB      8.217    13.267   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   ASP  A   92 CB     13.816    21.910   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   LYS  A   99 CB     12.752    19.356   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   ASP  A  104 CB     18.909    25.300   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   GLU  A  111 CB     31.252    38.895   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   LYS  A  113 CB     26.519    36.476   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   ASP  A  115 CB     27.395   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   62 CB   SER  A  116 CB     25.453   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   62 CB   ASP  A  125 CB     18.872    33.369   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   62 CB   SER  A  131 CB     10.469    10.958   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   SER  A  132 CB     13.435    13.802   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   62 CB   SER  A  133 CB     17.951    19.259   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   SER  A   71 CB     16.078    18.592   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   ASP  A   75 CB     25.976    29.772   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   LYS  A   77 CB     24.278   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   66 CB   SER  A   78 CB     20.892    26.218   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   GLU  A   86 CB      7.772     8.286   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   ASP  A   92 CB     21.105    28.991   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   LYS  A   99 CB      9.556     9.875   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   ASP  A  104 CB     12.091   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   66 CB   GLU  A  111 CB     27.595    35.967   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   LYS  A  113 CB     23.938    35.036   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   ASP  A  115 CB     24.236    37.743   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   SER  A  116 CB     22.255    33.859   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   ASP  A  125 CB     14.350    18.802   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   66 CB   SER  A  131 CB     15.273    16.837   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   SER  A  132 CB     18.585    20.229   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   66 CB   SER  A  133 CB     19.488    19.568   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   ASP  A   75 CB     11.902    13.136   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   LYS  A   77 CB     13.101    19.537   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   SER  A   78 CB      8.537     9.882   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   GLU  A   86 CB     22.097    31.448   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   ASP  A   92 CB     34.551    40.156   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: SER  A   71 CB   LYS  A   99 CB     21.637    23.502   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   ASP  A  104 CB     10.496   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   71 CB   GLU  A  111 CB     21.323    33.239   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   LYS  A  113 CB     19.471    32.354   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   ASP  A  115 CB     17.522    22.531   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   SER  A  116 CB     16.158    18.498   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   71 CB   ASP  A  125 CB     18.757    19.860   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: SER  A   71 CB   SER  A  131 CB     30.589   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   71 CB   SER  A  132 CB     34.400   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   71 CB   SER  A  133 CB     35.112    35.618   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   LYS  A   77 CB      5.774     7.206   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   SER  A   78 CB      5.313     6.235   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   GLU  A   86 CB     30.597   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   75 CB   ASP  A   92 CB     42.288   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   75 CB   LYS  A   99 CB     30.542    35.235   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   ASP  A  104 CB     15.816   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   75 CB   GLU  A  111 CB     16.432    21.370   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   LYS  A  113 CB     15.981    22.311   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   ASP  A  115 CB     12.121    14.744   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   SER  A  116 CB     12.409    13.482   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   75 CB   ASP  A  125 CB     25.804    26.179   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: ASP  A   75 CB   SER  A  131 CB     39.519   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   75 CB   SER  A  132 CB     43.660   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   75 CB   SER  A  133 CB     45.306   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   SER  A   78 CB      5.443    10.485   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   GLU  A   86 CB     28.538   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   ASP  A   92 CB     40.474   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   LYS  A   99 CB     29.418    37.710   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   ASP  A  104 CB     14.079   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   GLU  A  111 CB     10.962    15.739   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   LYS  A  113 CB     10.232    17.202   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   ASP  A  115 CB      7.503     8.168   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   SER  A  116 CB      9.371    11.472   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   77 CB   ASP  A  125 CB     25.814    28.593   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: LYS  A   77 CB   SER  A  131 CB     37.456   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   SER  A  132 CB     41.438   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   77 CB   SER  A  133 CB     43.471   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   GLU  A   86 CB     25.312   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   ASP  A   92 CB     37.141   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   LYS  A   99 CB     25.445    31.253   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   78 CB   ASP  A  104 CB     10.547   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   GLU  A  111 CB     15.611    24.777   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   78 CB   LYS  A  113 CB     13.702    24.174   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   78 CB   ASP  A  115 CB     10.030    14.278   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   78 CB   SER  A  116 CB      9.329    11.281   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A   78 CB   ASP  A  125 CB     21.274    22.562   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: SER  A   78 CB   SER  A  131 CB     34.245   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   SER  A  132 CB     38.383   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A   78 CB   SER  A  133 CB     40.146   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   ASP  A   92 CB     13.665    27.950   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   86 CB   LYS  A   99 CB      5.266     7.033   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   86 CB   ASP  A  104 CB     14.956   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   GLU  A  111 CB     31.302    40.313   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   LYS  A  113 CB     26.781    41.393   NO      40.000   >40.000      OK: LONG    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   ASP  A  115 CB     26.577   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   SER  A  116 CB     23.992   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A   86 CB   ASP  A  125 CB     12.725    28.941   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: GLU  A   86 CB   SER  A  131 CB      8.949    11.931   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   86 CB   SER  A  132 CB     13.210    15.697   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A   86 CB   SER  A  133 CB     15.945    16.404   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   92 CB   LYS  A   99 CB     13.220    20.475   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   92 CB   ASP  A  104 CB     26.685    30.757   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   92 CB   GLU  A  111 CB     43.230   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   92 CB   LYS  A  113 CB     38.204   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   92 CB   ASP  A  115 CB     37.225   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   92 CB   SER  A  116 CB     34.034   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A   92 CB   ASP  A  125 CB     18.887    24.804   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: ASP  A   92 CB   SER  A  131 CB      8.260    19.473   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   92 CB   SER  A  132 CB     10.776    14.325   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A   92 CB   SER  A  133 CB     15.089    18.018   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   99 CB   ASP  A  104 CB     15.384   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   99 CB   GLU  A  111 CB     33.848   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   99 CB   LYS  A  113 CB     29.298   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A   99 CB   ASP  A  115 CB     27.952    39.366   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   99 CB   SER  A  116 CB     24.745    34.768   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   99 CB   ASP  A  125 CB      8.858    11.843   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: LYS  A   99 CB   SER  A  131 CB     10.435    14.003   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   99 CB   SER  A  132 CB     14.973    18.676   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A   99 CB   SER  A  133 CB     17.000    18.266   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A  104 CB   GLU  A  111 CB     19.848   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  104 CB   LYS  A  113 CB     15.628   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  104 CB   ASP  A  115 CB     13.310   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  104 CB   SER  A  116 CB     10.544   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  104 CB   ASP  A  125 CB     12.816    33.492   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: ASP  A  104 CB   SER  A  131 CB     23.864    35.973   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A  104 CB   SER  A  132 CB     28.139    38.223   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A  104 CB   SER  A  133 CB     30.351   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A  111 CB   LYS  A  113 CB      5.447     6.293   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A  111 CB   ASP  A  115 CB     10.607    13.207   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A  111 CB   SER  A  116 CB     14.871    19.088   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: GLU  A  111 CB   ASP  A  125 CB     32.490   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: GLU  A  111 CB   SER  A  131 CB     39.554   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: GLU  A  111 CB   SER  A  132 CB     42.881   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: GLU  A  111 CB   SER  A  133 CB     45.313   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: LYS  A  113 CB   ASP  A  115 CB      6.959     9.063   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A  113 CB   SER  A  116 CB     10.671    17.717   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: LYS  A  113 CB   ASP  A  125 CB     27.895   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YN
+  LINK: LYS  A  113 CB   SER  A  131 CB     35.021   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A  113 CB   SER  A  132 CB     38.548   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: LYS  A  113 CB   SER  A  133 CB     41.330   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  115 CB   SER  A  116 CB      4.543     6.883   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: ASP  A  115 CB   ASP  A  125 CB     24.530    30.312   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: ASP  A  115 CB   SER  A  131 CB     35.153   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  115 CB   SER  A  132 CB     39.232   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  115 CB   SER  A  133 CB     42.138   >40.000   NO      40.000   >40.000      OK: EUCL    0/ 0    1/ 1 YY YY
+  LINK: SER  A  116 CB   ASP  A  125 CB     20.502    25.538   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YN
+  LINK: SER  A  116 CB   SER  A  131 CB     32.546   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A  116 CB   SER  A  132 CB     36.875   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: SER  A  116 CB   SER  A  133 CB     39.842   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY YY
+  LINK: ASP  A  125 CB   SER  A  131 CB     18.822   >40.000   NO      40.000   >40.000  OK: NOTFOUND    0/ 0    1/ 1 YY NY
+  LINK: ASP  A  125 CB   SER  A  132 CB     23.512    31.490   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY NY
+  LINK: ASP  A  125 CB   SER  A  133 CB     25.616    28.157   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY NY
+  LINK: SER  A  131 CB   SER  A  132 CB      4.820     7.921   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A  131 CB   SER  A  133 CB      8.897    14.650   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  LINK: SER  A  132 CB   SER  A  133 CB      5.565    10.617   NO      40.000   >40.000  BAD: MISSING    0/ 0    0/ 1 YY YY
+  -------------------------------------------------------------------------------------------------------------------------
+
+  RESULTS: 
+
+  For each experiment: 
+
+  -------------------------------------------------------------------------------------------------------------------------
+
+  Experiment: SDS
+
+    Number of type-reactive pairs of atoms:      105
+    Number of type-reactive pairs of atoms within linker reach:       71
+    Number of type-reactive pairs of atoms outside linker reach:       34
+    Missing links, according to the structure and type-reactivity:       71
+
+    Number of observed-reactive pairs of atoms:        0
+    Number of observed-reactive pairs of atoms within linker reach:        0
+    Number of observed-reactive pairs of atoms outside linker reach:        0
+    Missing links, according to the structure and observed-reactivity:        0
+
+  -------------------------------------------------------------------------------------------------------------------------
+
+  Experiment: basic
+
+    Number of type-reactive pairs of atoms:      231
+    Number of type-reactive pairs of atoms within linker reach:      164
+    Number of type-reactive pairs of atoms outside linker reach:       67
+    Missing links, according to the structure and type-reactivity:      164
+
+    Number of observed-reactive pairs of atoms:        0
+    Number of observed-reactive pairs of atoms within linker reach:        0
+    Number of observed-reactive pairs of atoms outside linker reach:        0
+    Missing links, according to the structure and observed-reactivity:        0
+
+  -------------------------------------------------------------------------------------------------------------------------
+
+  Experiment: 0length
+
+    Number of type-reactive pairs of atoms:      308
+    Number of type-reactive pairs of atoms within linker reach:      214
+    Number of type-reactive pairs of atoms outside linker reach:       94
+    Missing links, according to the structure and type-reactivity:      214
+
+    Number of observed-reactive pairs of atoms:        0
+    Number of observed-reactive pairs of atoms within linker reach:        0
+    Number of observed-reactive pairs of atoms outside linker reach:        0
+    Missing links, according to the structure and observed-reactivity:        0
+
+  -------------------------------------------------------------------------------------------------------------------------
+
+  FINAL RESULTS: 
+
+   RESULT0:     0 : Number of observations that are consistent with the structure.
+
+   RESULT1:   195 : Number of topological distances consistent with all observations. 
+   RESULT2:     0 : Number of topological distances NOT consistent with observations.  
+   RESULT3:   449 : Number of links with missing observations.  
+
+  #########################################################################################################################
