@@ -100,7 +100,7 @@ julia> large_score1 = filter( link -> maxscore1(link) > 5., links )
 The `resnames` and `indexes` functions also allow filtering by residue types and indexes. 
 Since the permutation between types are usually meaningless, the `ismatch` function is provided:
 
-```
+```julia
 julia> resnames(links[2])
 ("SER", "LYS")
 
