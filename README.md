@@ -66,8 +66,77 @@ produces:
 
 Note that the functions `deuc` and `maxscore1`, in the example, return vectors of data extracted for every link in the `links` list. Similar functions exist for the other parameters, and are:
 
-`name`, `consistency`, `deuc`, `dtop`, `dmax`, `nscans`,
+`name`, `resnames`, `indexes, `indomain`,
+`consistency`, `deuc`, `dtop`, `dmax`, `nscans`,
 `maxscore1`, `avgscore1`, `maxscore2`, `avgscore2`, `maxxic`, `avgxic`, `nspecies`, `count_nspecies`
+
+*Note:* The `consistency` function is special. It returns `true` or `false` depending if the topological distance (`dtop`) of the XL is smaller than the maximum linker reach (`dmax`), up to a tolerance `tol`. By default `tol=0`, but the function accepts the tolerance as an argument. Thus, for example:  
+
+```julia
+julia> x = consistency(links)
+```
+will return all links for which `dtop < dmax`. But  
+```julia
+julia> x = consistency(links,tol=2.0)
+```
+will return all links for which `dtop < dmax + 2.0`.
+
+### Filter links
+
+The functions above allow filtering the links by any criteria, using the standard `filter` function. For example,
+
+```julia
+julia> bad_links = filter( link -> consistency(link,tol=2.0) == false, links )
+ Vector of Links with: 80 links.
+
+julia> large_deuc = filter( link -> deu(link) > 10, links )
+ Vector of Links with: 90 links.
+
+julia> large_score1 = filter( link -> maxscore1(link) > 5., links )
+ Vector of Links with: 11 links.
+
+```
+
+The `resnames` and `indexes` functions also allow filtering by residue types and indexes. 
+Since the permutation between types are usually meaningless, the `ismatch` function is provided:
+
+```
+julia> resnames(links[2])
+("SER", "LYS")
+
+julia> ismatch(resnames(links[2]),("SER","LYS"))
+true
+
+julia> ismatch(resnames(links[2]),("LYS","SER"))
+true
+
+julia> indexes(links[2])
+(131, 99)
+
+julia> ismatch(indexes(links[2]),(99,131))
+true
+```
+Thus this function can be used for proper filtering of links by type, for example:
+
+```julia
+julia> filter( link -> ismatch(resnames(link),("SER","LYS")), links )
+ Vector of Links with: 20 links.
+```
+
+To filter the links by residue numbers, the `indomain` function is mostly useful:
+```julia
+julia> indexes(links[2])
+(131, 99)
+
+julia> indomain(links[2],1:131)
+true
+
+julia> indomain(links[2],1:120)
+false
+
+julia> mydomain = filter(link -> indomain(link,1:120), links)
+ Vector of Links with: 77 links.
+```
 
 ### Remarks on XIC data
 

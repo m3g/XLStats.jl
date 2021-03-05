@@ -4,7 +4,7 @@ using Statistics
 using Parameters
 using Printf
 
-export Link, getscore, read_all, filter, point_biserial
+export Link, getscore, read_all, filter, point_biserial, indomain
 
 #
 # Convert one letter and three-letter amino acid codes
@@ -52,16 +52,59 @@ end
 # syntax sugars for getfield on array of links
 #
 name(links::Vector{Link}) = getfield.(links,:name)
+
+function resnames(link::Link;type=3)
+  name = split(link.name,"-")
+  if type == 3
+    return threeletter[name[1][1:1]], threeletter[name[2][1:1]]
+  elseif type == 1
+    return name[1][1:1], name[2][1:1]
+  else
+    error(" type must be 1 or 3 in resnames. ")
+  end
+end
+
+function indexes(link::Link)
+  name = split(link.name,"-")
+  index1 = parse(Int,name[1][2:end])
+  index2 = parse(Int,name[2][2:end])
+  return index1, index2
+end
+
+function ismatch(x::Tuple{T,T},y::Tuple{T,T}) where T
+  ( (x[1] == y[1] && x[2] == y[2]) ||
+    (x[2] == y[1] && x[1] == y[2]) )
+end
+
+consistency(link::Link;tol=0.) = (0. <= link.dtop <= (link.dmax + tol))
 consistency(links::Vector{Link};tol=0) = consistency.(links,tol=tol)
-deuc(links::Vector{Link}) = getfield.(links,:deuc)
-dtop(links::Vector{Link}) = getfield.(links,:dtop)
-dmax(links::Vector{Link}) = getfield.(links,:dmax)
-nscans(links::Vector{Link}) = getfield.(links,:nscans)
-maxscore1(links::Vector{Link}) = maximum.(getfield.(links,:score1))
-avgscore1(links::Vector{Link}) = mean.(getfield.(links,:score1))
-maxscore2(links::Vector{Link}) = maximum.(getfield.(links,:score2))
-avgscore2(links::Vector{Link}) = mean.(getfield.(links,:score2))
-nspecies(links::Vector{Link}) = getfield.(links,:nspecies)
+
+deuc(link::Link) = link.deuc
+deuc(links::Vector{Link}) = deuc.(links)
+
+dtop(link::Link) = link.dtop
+dtop(links::Vector{Link}) = dtop.(links)
+
+dmax(link::Link) = link.dmax
+dmax(links::Vector{Link}) = dmax.(links)
+
+nscans(link::Link) = link.nscans
+nscans(links::Vector{Link}) = nscans.(links)
+
+maxscore1(link::Link) = maximum(link.score1)
+maxscore1(links::Vector{Link}) = maxscore1.(links)
+
+avgscore1(link::Link) = mean(link.score1)
+avgscore1(links::Vector{Link}) = avgscore1.(links)
+
+maxscore2(link::Link) = maximum(link.score2)
+maxscore2(links::Vector{Link}) = maxscore2.(links)
+
+avgscore2(link::Link) = mean(link.score2)
+avgscore2(links::Vector{Link}) = maxscore2.(links)
+
+nspecies(link::Link) = link.nspecies
+nspecies(links::Vector{Link}) = nspecies.(links)
 
 # Not all data has xic values, so these function have to be special
 maxxic(links::Vector{Link}) = maximum.(getfield.(links,:xic))
@@ -86,7 +129,8 @@ function avgxic(links::Vector{Link})
   return meanxic
 end
   
-export name, consistency, deuc, dtop, dmax, nscans, 
+export name, resnames, indexes, ismatch,
+       consistency, deuc, dtop, dmax, nscans, 
        maxscore1, avgscore1,
        maxscore2, avgscore2,
        maxxic, avgxic, 
@@ -223,7 +267,7 @@ end
 #
 # Function that checks if the link belongs to the chosen domain
 #
-function in_domain(name,domain)
+function indomain(name,domain)
   name == "None" && return false
   r = split(name,'-')
   # Remove wrong assignments for which the two residues are the same
@@ -240,6 +284,7 @@ function in_domain(name,domain)
     return false
   end
 end
+indomain(link::Link,domain) = indomain(link.name,domain)
 
 #
 # Function that reads the XIC file and fills the xic fields
@@ -325,18 +370,17 @@ end
 function getdmax(link,linktype_file)
   file = open(linktype_file,"r") 
   for line in eachline(file)
-    if ! comment(line)
-      if occursin("linktype",line)
-        data = split(line)
-        residue1_name = oneletter[data[2]]
-        residue2_name = oneletter[data[6]]
-        dmax = parse(Float64,data[10])
-        name = split(link.name,'-')
-        if ( name[1][1] == residue1_name && name[2][1] == residue2_name ) ||
-           ( name[1][1] == residue2_name && name[2][1] == residue1_name ) 
-          close(file)
-          return dmax
-        end
+    comment(line) && continue
+    if occursin("linktype",line)
+      data = split(line)
+      residue1_name = oneletter[data[2]]
+      residue2_name = oneletter[data[6]]
+      dmax = parse(Float64,data[10])
+      name = split(link.name,'-')
+      if ( name[1][1:1] == residue1_name && name[2][1:1] == residue2_name ) ||
+         ( name[1][1:1] == residue2_name && name[2][1:1] == residue1_name ) 
+        close(file)
+        return dmax
       end
     end
   end
@@ -358,10 +402,6 @@ function write(link;tol=0.)
                    res1_name,res1_index,res2_name,res2_index,cons,link.dtop,link.dmax))
 end
 
-#
-# Set consistency, given a tolerance
-#
-consistency(link::Link;tol=0.) = (0. <= link.dtop <= (link.dmax + tol))
 
 # 
 # Compute point-biserial correlation (x assumes 0 or 1 values, y is continuous)
@@ -411,7 +451,7 @@ function read_xml(data_file_name,xic_file_name,domain)
     comment(line) && continue
     if newlink(line)
       name = setname(line)
-      if in_domain(name,domain) 
+      if indomain(name,domain) 
         nlinks = nlinks + 1
       end
     end
@@ -429,7 +469,7 @@ function read_xml(data_file_name,xic_file_name,domain)
     comment(line) && continue
     if newlink(line)
       name = setname(line)
-      consider_link = in_domain(name,domain)
+      consider_link = indomain(name,domain)
       if consider_link
         ilink += 1
         names[ilink] = name
@@ -451,7 +491,7 @@ function read_xml(data_file_name,xic_file_name,domain)
     comment(line) && continue
     if newlink(line)
       name = setname(line)
-      consider_link = in_domain(name,domain)
+      consider_link = indomain(name,domain)
       if consider_link
         ilink += 1
         iscan = 0
