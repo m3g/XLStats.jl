@@ -248,6 +248,7 @@ function readxic!(links,xic_file_name)
   
   # Not every xic is provided, -1 means it was not
   for link in links
+     link.hasxic = false
      link.xic .= -1
   end
 
@@ -260,7 +261,11 @@ function readxic!(links,xic_file_name)
     if xic_in_next_line
       for link in links, i in 1:link.nscans
         if iread == link.iscan[i]
-          link.xic[i] = parse(Float64,data[end])
+          xic = parse(Float64,data[end])  
+          if xic > 0 
+            link.hasxic = true
+            link.xic[i] = xic
+          end
           xic_in_next_line = false
           break
         end
