@@ -30,6 +30,7 @@ threeletter = Dict( v => k for (k,v) in oneletter )
   dmax::Float64 = 0.
 
   nscans::Int = 0
+  nspecies::Int = 0
   iscan::Vector{Int} = zeros(Int,nscans)
   score1::Vector{Float64} = zeros(nscans)
   score2::Vector{Float64} = zeros(nscans)
@@ -37,7 +38,6 @@ threeletter = Dict( v => k for (k,v) in oneletter )
 
   hasxic::Bool = false
   xic::Vector{Float64} = zeros(nscans)
-  nspecies::Int = 0
 
 end
 
@@ -61,49 +61,104 @@ maxscore1(links::Vector{Link}) = maximum.(getfield.(links,:score1))
 avgscore1(links::Vector{Link}) = mean.(getfield.(links,:score1))
 maxscore2(links::Vector{Link}) = maximum.(getfield.(links,:score2))
 avgscore2(links::Vector{Link}) = mean.(getfield.(links,:score2))
-maxxic(links::Vector{Link}) = maximum.(getfield.(links,:xic))
-avgxic(links::Vector{Link}) = mean.(getfield.(links,:xic))
 nspecies(links::Vector{Link}) = getfield.(links,:nspecies)
 
+# Not all data has xic values, so these function have to be special
+maxxic(links::Vector{Link}) = maximum.(getfield.(links,:xic))
+function avgxic(links::Vector{Link})
+  nxic = count(link -> link.hasxic, links)
+  meanxic = zeros(nxic)
+  ixic = 0
+  for link in links
+    if link.hasxic
+      ixic += 1
+      n = 0
+      a  = 0.
+      for xic in link.xic
+        if xic > 0
+          n += 1
+          a += xic
+        end
+      end
+      meanxic[ixic] = a/n
+    end
+  end
+  return meanxic
+end
+  
 export name, consistency, deuc, dtop, dmax, nscans, 
        maxscore1, avgscore1,
        maxscore2, avgscore2,
        maxxic, avgxic, 
-       nspecies
+       nspecies, count_nspecies
 
-#
-# Function mplush: I don't remember what it serves for
-#
-function mplush_repeat(mplush,unique)
-  for data in unique
-    if abs(mplush-data) < 1.0
-      return true
-    end
-  end
-  return false
-end
+"""
 
-function set_scores(link::Link)
+```
+count_nspecies(link::Link;mtol=1.0)
+```
+
+Count the number of independent species identified in `link`, with a mass difference tolerance
+`mtol`, which defaults to `1.0`. This default value is stored in the `link.nspecies` field.
+
+## Example:
+
+```julia-repl
+julia> links
+ Vector of Links with: 102 links.
+
+
+julia> count_nspecies(links[1],mtol=1)
+7
+
+```
+
+"""
+function count_nspecies(link::Link;mtol=1.0)
   @unpack mplush, nscans = link
-
-  unique = eltype(mplush)[mplush[1]]
-  for i in 1:nscans
-    if ! mplush_repeat(mplush[i],unique)
+  unique = Float64[mplush[1]]
+  for i in 2:nscans
+    if findfirst( m -> abs(mplush[i]-m) < mtol, unique) == nothing
       push!(unique,mplush[i])
     end
   end
-  link.nspecies = length(unique)
-
-  nxic = 0
-  for xic in link.xic
-    if xic > 0.
-      link.hasxic = true
-      nxic += 1
-    end
-  end
-
+  return length(unique)
 end
 
+"""
+
+```
+read_all(xml_file::String=nothing,
+         topolink_log = nothing,
+         topolink_input = nothing,
+         xic_file_name = nothing,
+         domain::UnitRange = -1000:1000)
+```
+
+Reads the `xml_file` SimXL file, `topolink` log file, `topolink` input file and,
+optionally, a file containing `xic` data for each scan, and returns a vector of `Link`
+structures containing all data. Optionally, one can set the `domain` to be considered,
+consisting of a range of residue numbers. 
+
+## Example:
+
+```julia_repl
+
+julia> using XLStats
+
+julia> links = read_all(xml_file="./data/salbiii_hitsDetail.dat",
+                        topolink_log="./data/salbiii_topolink.log",
+                        topolink_input="./data/topolink.inp",
+                        #xic_file_name="./data/salbiii_xic.dat",
+                        domain=2:134)
+ Reading all data files... 
+ Reading XML file ... 
+ Reading XIC data... 
+ Vector of Links with: 102 links.
+
+```
+
+"""
 function read_all(;xml_file = nothing,
                    topolink_log = nothing,
                    topolink_input = nothing,
@@ -154,7 +209,7 @@ end
 #
 # Function that compares two links
 #
-function is_link(name1,name2)
+function same_residues(name1,name2)
   r1 = split(name1,'-')
   r2 = split(name2,'-')
   if ( ( r1[1] == r2[1] && r1[2] == r2[2] ) ||  
@@ -187,27 +242,33 @@ function in_domain(name,domain)
 end
 
 #
-# Function that reads the XIC file
+# Function that reads the XIC file and fills the xic fields
 #
 function readxic!(links,xic_file_name)
   
+  # Not every xic is provided, -1 means it was not
   for link in links
      link.xic .= -1
   end
 
   xic_file_name == nothing && return
   xic_file = open(xic_file_name,"r")
+  iread = 0
+  xic_in_next_line = false
   for line in eachline(xic_file)
     data = split(line)
-    if can_be_parsed_as(Int,data[1])
-      iread = parse(Int,data[1])
-      for link in links,
-          is in link.iscan
-        if is == iread
-          link.xic[iread] = parse(Float64,data[2])
+    if xic_in_next_line
+      for link in links, i in 1:link.nscans
+        if iread == link.iscan[i]
+          link.xic[i] = parse(Float64,data[end])
+          xic_in_next_line = false
           break
         end
       end
+    end
+    if can_be_parsed_as(Int,data[1])
+      iread = parse(Int,data[1])
+      xic_in_next_line = true
     end
   end
   close(xic_file)
@@ -225,7 +286,7 @@ function can_be_parsed_as(T::DataType,s::AbstractString)
 end
 
 #
-# Function that reads link log and sets link data
+# Function that reads a topolink link log and sets link data
 #
 function readlog(link,logfile_name)
 
@@ -240,7 +301,7 @@ function readlog(link,logfile_name)
       name = residue1_name*residue1_index*'-'*residue2_name*residue2_index
       deuc = parse(Float64,line[43:51])
       dtop = parse(Float64,replace(line[52:61],">"=>""))
-      if is_link(name,link.name)
+      if same_residues(name,link.name)
         close(file)
         return deuc, dtop
       end
@@ -282,9 +343,9 @@ end
 # Print link in the topolink format
 #
 function write(link;tol=0.)
-  data = split(name,"-")
-  res1_name = threeletter[data[1][1]]
-  res2_name = threeletter[data[2][1]]
+  data = split(link.name,"-")
+  res1_name = threeletter[data[1][1:1]]
+  res2_name = threeletter[data[2][1:1]]
   res1_index = parse(Int,data[1][2:end])
   res2_index = parse(Int,data[2][2:end])
   consistency = setconsistency(link,tol=tol)
@@ -418,11 +479,9 @@ function read_xml(data_file_name,xic_file_name,domain)
   println(" Reading XIC data... ")
   readxic!(links,xic_file_name)
 
-  # Compute scores from data read
-
-  println(" Setting link scores... ")
+  # Compute the number of species of each link
   for link in links
-    set_scores(link)
+    link.nspecies = count_nspecies(link)
   end
 
   return links
@@ -431,7 +490,6 @@ end
 #
 # Remove a specific link from the list
 #
-
 function remove(links,name)
   i=-1
   for link in links
@@ -466,6 +524,10 @@ function setname(line)
   line = replace(line,")"=>"")
   name = strip(line)
   return name
+end
+
+function Base.show( io :: IO,::MIME"text/plain", links::Vector{Link} )
+  println(" Vector of Links with: ", length(links)," links.")
 end
 
 end # module
