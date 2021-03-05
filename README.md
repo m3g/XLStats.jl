@@ -64,6 +64,18 @@ produces:
 
 ![fig1](./test/plots/score1_vs_deuc.png)
 
+Note that the functions `deuc` and `maxscore1`, in the example, return vectors of data extracted for every link in the `links` list. Similar functions exist for the other parameters, and are:
+
+`name`, `consistency`, `deuc`, `dtop`, `dmax`, `nscans`,
+`maxscore1`, `avgscore1`, `maxscore2`, `avgscore2`, `maxxic`, `avgxic`, `nspecies`, `count_nspecies`
+
+### Some remarks: 
+
+- XIC data might not be available for every XL, or every scan of every XL. Therefore, 
+
+
+
+
 
 
 
