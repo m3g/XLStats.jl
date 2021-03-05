@@ -403,11 +403,17 @@ function write(link;tol=0.)
 end
 
 
-# 
-# Compute point-biserial correlation (x assumes 0 or 1 values, y is continuous)
-# x is boolean (True or False for each group)
-#
-function point_biserial(x,y)
+""" 
+
+```
+point_biserial(x::Vector{Bool},y::Vector{<:Real})
+```
+
+Compute point-biserial correlation (x assumes 0 or 1 values, y is continuous)
+x is boolean (True or False for each group)
+
+"""
+function point_biserial(x::Vector{Bool},y::Vector{<:Real})
 
   ndata = length(x)
   g1 = zeros(Bool,ndata)

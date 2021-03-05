@@ -167,6 +167,24 @@ This produces:
 
 ![fig2](./test/plots/logmxic_vs_top.png)
 
+### Point-biserial correlation
+
+When studying the consitency of a continuous variable with a discrete variable, an interesting parameter to be computed is the Point-Biserial correlation. For example:
+```julia
+julia> y = deuc(links);
+
+julia> x = consistency(links);
+
+julia> scatter(x,y,label="",xlabel="Consistency",ylabel="Euclidian Distance",xlims=[-0.5,1.5])
+```
+produces
+![fig2](./test/plots/pbs.png)
+This shows a correlation between these two variables, but a standard Pearson correlation is not an adequate measure of that correlation. The `point_biserial` function computes one appropriate measure of this correlation:
+```julia
+julia> point_biserial(x,y)
+-0.5720743658488596
+```
+
 ### Exporting data 
 
 To export data to be analyzed by other software use the `DelimitedFiles` package:
