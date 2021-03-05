@@ -68,7 +68,7 @@ Note that the functions `deuc` and `maxscore1`, in the example, return vectors o
 
 `name`, `resnames`, `indexes`, `indomain`,
 `consistency`, `deuc`, `dtop`, `dmax`, `nscans`,
-`maxscore1`, `avgscore1`, `maxscore2`, `avgscore2`, `maxxic`, `avgxic`, `nspecies`, `count_nspecies`
+`maxscore1`, `avgscore1`, `maxscore2`, `avgscore2`, `hasxic`, `maxxic`, `avgxic`, `nspecies`, `count_nspecies`
 
 *Note:* The `consistency` function is special. It returns `true` or `false` depending if the topological distance (`dtop`) of the XL is smaller than the maximum linker reach (`dmax`), up to a tolerance `tol`. By default `tol=0`, but the function accepts the tolerance as an argument. Thus, for example:  
 
@@ -143,7 +143,7 @@ julia> mydomain = filter(link -> indomain(link,1:120), links)
 XIC data might not be available for every XL, or every scan of every XL. Scans without XIC data will show `-1` at the XIC field. The links for which XIC data is available can be filtered with:
 
 ```julia
-julia> links_with_xic = filter(link -> link.hasxic, links)
+julia> links_with_xic = filter(link -> hasxic(link), links)
  Vector of Links with: 32 links.
 
 ```

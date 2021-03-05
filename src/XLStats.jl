@@ -107,6 +107,8 @@ nspecies(link::Link) = link.nspecies
 nspecies(links::Vector{Link}) = nspecies.(links)
 
 # Not all data has xic values, so these function have to be special
+hasxic(link::Link) = link.hasxic
+hasxic(links::Vector{Link}) = hasxic.(links)
 maxxic(links::Vector{Link}) = maximum.(getfield.(links,:xic))
 function avgxic(links::Vector{Link})
   nxic = count(link -> link.hasxic, links)
@@ -133,7 +135,7 @@ export name, resnames, indexes, ismatch,
        consistency, deuc, dtop, dmax, nscans, 
        maxscore1, avgscore1,
        maxscore2, avgscore2,
-       maxxic, avgxic, 
+       hasxic, maxxic, avgxic, 
        nspecies, count_nspecies
 
 """
