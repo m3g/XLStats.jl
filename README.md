@@ -66,7 +66,7 @@ produces:
 
 Note that the functions `deuc` and `maxscore1`, in the example, return vectors of data extracted for every link in the `links` list. Similar functions exist for the other parameters, and are:
 
-`name`, `resnames`, `indexes, `indomain`,
+`name`, `resnames`, `indexes`, `indomain`,
 `consistency`, `deuc`, `dtop`, `dmax`, `nscans`,
 `maxscore1`, `avgscore1`, `maxscore2`, `avgscore2`, `maxxic`, `avgxic`, `nspecies`, `count_nspecies`
 
