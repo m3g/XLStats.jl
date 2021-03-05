@@ -89,7 +89,7 @@ julia> x = dtop(links_with_xic);
 
 julia> y = log10.(maxxic(links_with_xic));
 
-julia> scatter(x,y,label="",xlabel="Topological distance",ylabel="log(maxxic)")
+julia> scatter(x,y,label="",xlabel="Topological distance",ylabel="log₁₀(maxxic)")
 
 ```
 
@@ -97,6 +97,27 @@ julia> scatter(x,y,label="",xlabel="Topological distance",ylabel="log(maxxic)")
 This produces:
 
 ![fig2](./test/plots/logmxic_vs_top.png)
+
+### Exporting data 
+
+To export data to be analyzed by other software use the `DelimitedFiles` package:
+
+- Install with
+```julia
+julia> ] add DelimitedFiles
+```
+
+- For example, write a data file with
+```julia
+julia> using DelimitedFiles
+
+julia> writedlm("mydata.txt",[x y])
+```
+
+where `x` and `y` could be obtained by the commands of the examples above.
+
+
+
 
 
 
