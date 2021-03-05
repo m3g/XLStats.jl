@@ -26,3 +26,25 @@ julia> links = read_all(xml_file="./data/salbiii_hitsDetail.dat",
  Vector of Links with: 102 links.
 ```
 
+The goal was to find correlations between the spectral parameters and the topological (surface-accessible) distances obtained with TopoLink. The available parameters to be compared are (fields of the `Link` structure, which are the elements of the `links` vector created above):
+
+| field name    | Meaning                       | type of value     | Example                   |
+|:-------------:|:-----------------------------:|:-----------------:|:-------------------------:|
+| `name1`       | Name of link                  | `String`          | `"K17-K6"`                |
+| `consistency` | Consitency with the structure | `Bool`            | `false`                   |
+| `deuc`        | Euclidean distance            | `Float64`         | `16.696`                  |
+| `dtop`        | Toplogical distance           | `Float64`         | `18.218`                  |
+| `dmax`        | Maximum linker length         | `Float64`         | `17.000`                  |
+| `nscans`      | Number of scans of the XL     | `Int64`           | `15`                      |
+| `nspecies`    | Number of species of the XL   | `Int64`           | `7`                       |
+| `score1`      | `score1` of the scans         | `Vector{Float64}` | `[6.104, 5.978,... ]`     |
+| `score2`      | `score2` of the scans         | `Vector{Float64}` | `[3.379, 2.668,... ]`     |
+| `hasxic`      |  XIC data is available?       | `Bool`            | `false`                   |
+| `xic`         | XIC data for each scan        | `Vector{Float64}` | `[-1.0, 157034.76,... ]`  |
+|:-------------:|:-----------------------------:|:-----------------:|:-------------------------:|
+
+
+
+
+
+

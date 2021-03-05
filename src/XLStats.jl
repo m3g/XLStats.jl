@@ -52,7 +52,7 @@ end
 # syntax sugars for getfield on array of links
 #
 name(links::Vector{Link}) = getfield.(links,:name)
-consistency(links::Vector{Link}) = getfield.(links,:consistency)
+consistency(links::Vector{Link};tol=0) = consistency.(links,tol=tol)
 deuc(links::Vector{Link}) = getfield.(links,:deuc)
 dtop(links::Vector{Link}) = getfield.(links,:dtop)
 dmax(links::Vector{Link}) = getfield.(links,:dmax)
@@ -200,7 +200,7 @@ function read_all(;xml_file = nothing,
 
   # Set consistency with 0. tolerance:
   for link in links
-    link.consistency = setconsistency(link,tol=0.)
+    link.consistency = consistency(link,tol=0.)
   end
 
   return links
@@ -348,21 +348,15 @@ function write(link;tol=0.)
   res2_name = threeletter[data[2][1:1]]
   res1_index = parse(Int,data[1][2:end])
   res2_index = parse(Int,data[2][2:end])
-  consistency = setconsistency(link,tol=tol)
+  cons = consistency(link,tol=tol)
   println(@sprintf("%3s %3i %3s %3i %3i %3.2f %3.2f",
-                   res1_name,res1_index,res2_name,res2_index,consistency,link.dtop,link.dmax))
+                   res1_name,res1_index,res2_name,res2_index,cons,link.dtop,link.dmax))
 end
 
 #
 # Set consistency, given a tolerance
 #
-function setconsistency(link::Link;tol=0.)
-  if (link.dtop >= 0. && link.dtop <= link.dmax + tol)
-    return true
-  else 
-    return false
-  end
-end
+consistency(link::Link;tol=0.) = (0. <= link.dtop <= (link.dmax + tol))
 
 # 
 # Compute point-biserial correlation (x assumes 0 or 1 values, y is continuous)
