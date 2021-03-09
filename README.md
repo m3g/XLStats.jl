@@ -73,7 +73,7 @@ Note that the functions `deuc` and `maxscore1`, in the example, return vectors o
 *Note:* The `consistency` function is special. It returns `true` or `false` depending if the topological distance (`dtop`) of the XL is smaller than the maximum linker reach (`dmax`), up to a tolerance `tol`. By default `tol=0`, but the function accepts the tolerance as an argument. Thus, for example:  
 
 ```julia
-julia> x = consistency(links)
+julia> x = consistency(links);
 ```
 will return all links for which `dtop < dmax`. But  
 ```julia
@@ -87,9 +87,9 @@ The functions above allow filtering the links by any criteria, using the standar
 
 ```julia
 julia> bad_links = filter( link -> consistency(link,tol=2.0) == false, links )
- Vector of Links with: 80 links.
+ Vector of Links with: 76 links.
 
-julia> large_deuc = filter( link -> deu(link) > 10, links )
+julia> large_deuc = filter( link -> deuc(link) > 10, links )
  Vector of Links with: 90 links.
 
 julia> large_score1 = filter( link -> maxscore1(link) > 5., links )
@@ -169,7 +169,7 @@ This produces:
 
 ### Point-biserial correlation
 
-When studying the consitency of a continuous variable with a discrete variable, an interesting parameter to be computed is the Point-Biserial correlation. For example:
+When studying the consistency of a continuous variable with a discrete variable, an interesting parameter to be computed is the Point-Biserial correlation. For example:
 ```julia
 julia> y = deuc(links);
 

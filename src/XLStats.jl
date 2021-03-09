@@ -6,21 +6,65 @@ using Printf
 
 export Link, getscore, read_all, filter, point_biserial, indomain
 
+export name, resnames, indexes, ismatch,
+       consistency, deuc, dtop, dmax, nscans, 
+       maxscore1, avgscore1,
+       maxscore2, avgscore2,
+       hasxic, maxxic, avgxic, 
+       nspecies, count_nspecies
+
 #
 # Convert one letter and three-letter amino acid codes
 #
-oneletter = Dict("CYS"=>"C", "ASP"=>"D", "SER"=>"S", "GLN"=>"Q", "LYS"=>"K",
-                 "ILE"=>"I", "PRO"=>"P", "THR"=>"T", "PHE"=>"F", "ASN"=>"N", 
-                 "GLY"=>"G", "HIS"=>"H", "LEU"=>"L", "ARG"=>"R", "TRP"=>"W", 
-                 "ALA"=>"A", "VAL"=>"V", "GLU"=>"E", "TYR"=>"Y", "MET"=>"M")
-threeletter = Dict( v => k for (k,v) in oneletter )
+const oneletter = Dict("CYS"=>"C", "ASP"=>"D", "SER"=>"S", "GLN"=>"Q", "LYS"=>"K",
+                       "ILE"=>"I", "PRO"=>"P", "THR"=>"T", "PHE"=>"F", "ASN"=>"N", 
+                       "GLY"=>"G", "HIS"=>"H", "LEU"=>"L", "ARG"=>"R", "TRP"=>"W", 
+                       "ALA"=>"A", "VAL"=>"V", "GLU"=>"E", "TYR"=>"Y", "MET"=>"M")
+const threeletter = Dict( v => k for (k,v) in oneletter )
+
+#
+# List of possible data of the scans and the associated symbols in the Link struct
+#
+const data_list = Dict( "Scan:"                => :index, 
+                        "Peptide:"             => :peptide,
+                        "Secondary Score:"     => :score2,
+                        "Score:"               => :score1,
+                        "XL Position 1:"       => :pos1,   
+                        "XL Position 2:"       => :pos2,
+                        "Source File:"         => :source_file,
+                        "Experimental M+H:"    => :mplush,
+                        "Precursor Charge:"    => :prec_charge,
+                        "Peaks Matched alpha:" => :matched_alpha,
+                        "Peaks Matched beta:"  => :matched_beta,
+                        "Retention Time:"      => :retention_time,
+                        "Assessment:"          => :assessment )
+
+#
+# Structure to contain scan data
+#
+@with_kw mutable struct Scan
+  index :: Int = 0
+  pep1 :: AbstractString = ""
+  pep2 :: AbstractString = ""
+  score1 :: Float64 = 0.
+  score2 :: Float64 = 0.
+  pos1 :: Int = 0
+  pos2 :: Int = 0
+  source_file :: AbstractString = ""
+  mplush :: Float64 = 0
+  prec_charge :: Int = 0
+  matched_alpha :: Int = 0
+  matched_beta :: Int = 0 
+  retention_time :: Float64 = 0
+  xic :: Float64 = -1
+end
 
 #
 # Structure that contain each link data
 #
 @with_kw mutable struct Link
 
-  name::String = "None"
+  name::AbstractString = "None"
   residue1_index::Int = 0
   residue2_index::Int = 0
 
@@ -29,15 +73,9 @@ threeletter = Dict( v => k for (k,v) in oneletter )
   dtop::Float64 = 0.
   dmax::Float64 = 0.
 
-  nscans::Int = 0
-  nspecies::Int = 0
-  iscan::Vector{Int} = zeros(Int,nscans)
-  score1::Vector{Float64} = zeros(nscans)
-  score2::Vector{Float64} = zeros(nscans)
-  mplush::Vector{Float64} = zeros(nscans)
-
+  nspecies :: Int = 0
   hasxic::Bool = false
-  xic::Vector{Float64} = zeros(nscans)
+  scans :: Vector{Scan} 
 
 end
 
@@ -45,14 +83,15 @@ function Link(name::String,nscans::Int)
   str = split(name,'-')
   i = parse(Int,str[1][2:end])
   j = parse(Int,str[2][2:end])
-  Link(name=name, nscans=nscans, residue1_index=i, residue2_index=j)
+  scans = [ Scan() for i in 1:nscans ]
+  Link(name=name, scans=scans, residue1_index=i, residue2_index=j)
 end
 
 # 
 # syntax sugars for getfield on array of links
 #
-name(links::Vector{Link}) = getfield.(links,:name)
-
+name(link::Link) = link.name 
+name(links::Vector{Link}) = name.(links)
 function resnames(link::Link;type=3)
   name = split(link.name,"-")
   if type == 3
@@ -63,13 +102,7 @@ function resnames(link::Link;type=3)
     error(" type must be 1 or 3 in resnames. ")
   end
 end
-
-function indexes(link::Link)
-  name = split(link.name,"-")
-  index1 = parse(Int,name[1][2:end])
-  index2 = parse(Int,name[2][2:end])
-  return index1, index2
-end
+indexes(link::Link) = (link.residue1_index,link.residue2_index)
 
 function ismatch(x::Tuple{T,T},y::Tuple{T,T}) where T
   ( (x[1] == y[1] && x[2] == y[2]) ||
@@ -88,20 +121,44 @@ dtop(links::Vector{Link}) = dtop.(links)
 dmax(link::Link) = link.dmax
 dmax(links::Vector{Link}) = dmax.(links)
 
-nscans(link::Link) = link.nscans
+nscans(link::Link) = length(link.scans)
 nscans(links::Vector{Link}) = nscans.(links)
 
-maxscore1(link::Link) = maximum(link.score1)
+#
+# Get maximum value of a field of the scans of a link
+#
+function getmax(link::Link,field::Symbol)
+  nscans(link) == 0 && return missing
+  valmax = getfield(link.scans[1],field)
+  for iscan in 2:nscans(link)
+     valmax = max(valmax,getfield(link.scans[iscan],field))
+  end
+  return valmax
+end
+
+#
+# Get the mean value of a field of the scans of a link
+#
+function getmean(link::Link,field::Symbol)
+  nscans(link) == 0 && return missing
+  meanval = zero(typeof(getfield(link.scans[1],field)))
+  for iscan in 2:nscans(link)
+     meanval += getfield(link.scans[iscan],field)
+  end
+  return meanval / nscans(link)
+end
+
+maxscore1(link::Link) = getmax(link,:score1)
 maxscore1(links::Vector{Link}) = maxscore1.(links)
 
-avgscore1(link::Link) = mean(link.score1)
+avgscore1(link::Link) = getmean(link,:score1)
 avgscore1(links::Vector{Link}) = avgscore1.(links)
 
-maxscore2(link::Link) = maximum(link.score2)
+maxscore2(link::Link) = getmax(link,:score2)
 maxscore2(links::Vector{Link}) = maxscore2.(links)
 
-avgscore2(link::Link) = mean(link.score2)
-avgscore2(links::Vector{Link}) = maxscore2.(links)
+avgscore2(link::Link) = getmean(link,:score2)
+avgscore2(links::Vector{Link}) = avgscore2.(links)
 
 nspecies(link::Link) = link.nspecies
 nspecies(links::Vector{Link}) = nspecies.(links)
@@ -109,7 +166,8 @@ nspecies(links::Vector{Link}) = nspecies.(links)
 # Not all data has xic values, so these function have to be special
 hasxic(link::Link) = link.hasxic
 hasxic(links::Vector{Link}) = hasxic.(links)
-maxxic(links::Vector{Link}) = maximum.(getfield.(links,:xic))
+maxxic(link::Link) = getmax(link,:xic)
+maxxic(links::Vector{Link}) = maxxic.(links)
 function avgxic(links::Vector{Link})
   nxic = count(link -> link.hasxic, links)
   meanxic = zeros(nxic)
@@ -119,10 +177,10 @@ function avgxic(links::Vector{Link})
       ixic += 1
       n = 0
       a  = 0.
-      for xic in link.xic
-        if xic > 0
+      for scan in link.scans
+        if scan.xic > 0
           n += 1
-          a += xic
+          a += scan.xic
         end
       end
       meanxic[ixic] = a/n
@@ -131,13 +189,6 @@ function avgxic(links::Vector{Link})
   return meanxic
 end
   
-export name, resnames, indexes, ismatch,
-       consistency, deuc, dtop, dmax, nscans, 
-       maxscore1, avgscore1,
-       maxscore2, avgscore2,
-       hasxic, maxxic, avgxic, 
-       nspecies, count_nspecies
-
 """
 
 ```
@@ -161,11 +212,11 @@ julia> count_nspecies(links[1],mtol=1)
 
 """
 function count_nspecies(link::Link;mtol=1.0)
-  @unpack mplush, nscans = link
-  unique = Float64[mplush[1]]
-  for i in 2:nscans
-    if findfirst( m -> abs(mplush[i]-m) < mtol, unique) == nothing
-      push!(unique,mplush[i])
+  nscans(link) == 0 && return 0
+  unique = Float64[link.scans[1].mplush]
+  for i in 2:nscans(link)
+    if findfirst( m -> abs(link.scans[i].mplush-m) < mtol, unique) == nothing
+      push!(unique,link.scans[i].mplush)
     end
   end
   return length(unique)
@@ -296,7 +347,9 @@ function readxic!(links,xic_file_name)
   # Not every xic is provided, -1 means it was not
   for link in links
      link.hasxic = false
-     link.xic .= -1
+     for i in 1:nscans(link)
+       link.scans[i].xic = -1
+     end
   end
 
   xic_file_name == nothing && return
@@ -306,12 +359,12 @@ function readxic!(links,xic_file_name)
   for line in eachline(xic_file)
     data = split(line)
     if xic_in_next_line
-      for link in links, i in 1:link.nscans
-        if iread == link.iscan[i]
+      for link in links, i in 1:nscans(link)
+        if iread == link.scans[i].index
           xic = parse(Float64,data[end])  
           if xic > 0 
             link.hasxic = true
-            link.xic[i] = xic
+            link.scans[i].xic = xic
           end
           xic_in_next_line = false
           break
@@ -415,7 +468,7 @@ Compute point-biserial correlation (x assumes 0 or 1 values, y is continuous)
 x is boolean (True or False for each group)
 
 """
-function point_biserial(x::Vector{Bool},y::Vector{<:Real})
+function point_biserial(x::AbstractVector{Bool},y::AbstractVector{<:Real})
 
   ndata = length(x)
   g1 = zeros(Bool,ndata)
@@ -507,17 +560,28 @@ function read_xml(data_file_name,xic_file_name,domain)
     end
     if consider_link && occursin("Scan",line)
       iscan = iscan + 1
-    
-      line = replace(line,"Scan:"=>" ")
-      line = replace(line,"Secondary Score:"=>" ")
-      line = replace(line,"Score:"=>" ")
-      line = replace(line,"Experimental M+H:"=>" ")
+
+      for pair in data_list
+        line = replace(line,pair)
+      end
       data = split(line)
-    
-      links[ilink].score1[iscan] =  parse(Float64,(data[2]))
-      links[ilink].score2[iscan] =  parse(Float64,(data[3]))
-      links[ilink].mplush[iscan] =  parse(Float64,(data[4]))
-      links[ilink].iscan[iscan] = parse(Int,data[1])
+
+      for field in values(data_list)
+        ival = findfirst(isequal("$field"),data)
+        if ! isnothing(ival) && length(data) > ival
+          if field == :peptide
+            setfield!(links[ilink].scans[iscan],:pep1,data[ival+1])
+            setfield!(links[ilink].scans[iscan],:pep2,data[ival+3])
+          else
+            if fieldtype(Scan,field) <: AbstractString
+              setfield!(links[ilink].scans[iscan],field,data[ival+1])
+            else
+              fieldvalue = parse(fieldtype(Scan,field),data[ival+1])
+              setfield!(links[ilink].scans[iscan],field,fieldvalue)
+            end
+          end
+        end
+      end
     end
   end
   close(data_file)
@@ -566,6 +630,7 @@ newlink(line) = occursin("(",line)
 # its name if so
 #
 function setname(line)
+  ! occursin("-",line) && return "None"
   line = replace(line," ("=>"",count=2)
   line = replace(line,") - "=>"-")
   line = replace(line,")"=>"")
