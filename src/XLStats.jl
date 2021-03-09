@@ -95,8 +95,9 @@ end
 #
 name(link::Link) = link.name 
 name(links::Vector{Link}) = name.(links)
-function resnames(link::Link;type=3)
-  name = split(link.name,"-")
+
+function resnames(linkname::AbstractString;type=3)
+  name = split(linkname,"-")
   if type == 3
     return threeletter[name[1][1:1]], threeletter[name[2][1:1]]
   elseif type == 1
@@ -105,7 +106,18 @@ function resnames(link::Link;type=3)
     error(" type must be 1 or 3 in resnames. ")
   end
 end
+resnames(link::Link;type=3) = resnames(link.name,type=type)
+  
 indexes(link::Link) = (link.residue1_index,link.residue2_index)
+function indexes(linkname::AbstractString)
+  name = split(linkname,"-")
+  return parse(Int,name[1][2:end]), parse(Int,name[2][2:end])
+end
+
+function ismatch(name1::AbstractString,name2::AbstractString)
+   ( ismatch(resnames(name1),resnames(name2)) &&
+     ismatch(indexes(name1),indexes(name2)) )
+end
 
 function ismatch(x::Tuple{T,T},y::Tuple{T,T}) where T
   ( (x[1] == y[1] && x[2] == y[2]) ||

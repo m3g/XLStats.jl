@@ -59,6 +59,11 @@ links = read_all(xml_file=xml_data,
   @test ismatch(indexes(links[2]),(99,131))
   @test ismatch(indexes(links[2]),(131,99))
 
+  @test ismatch("D143-E108","D143-E108")
+  @test ismatch("D108-E143","D143-E108")
+  @test ismatch("D108-D143","D143-E108") == false
+  @test ismatch("D108-D143","D100-E108") == false
+
   @test indomain(links[2],1:131)
   @test indomain(links[2],1:120) == false
 
