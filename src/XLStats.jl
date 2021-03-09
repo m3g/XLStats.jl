@@ -1,5 +1,6 @@
 module XLStats
 
+using OrderedCollections
 using Statistics
 using Parameters
 using Printf
@@ -24,20 +25,22 @@ const threeletter = Dict( v => k for (k,v) in oneletter )
 
 #
 # List of possible data of the scans and the associated symbols in the Link struct
+# needs to be ordered because it will define the substitution sequence when parsing
+# the Scan line, and score1 and score2 conflict.
 #
-const data_list = Dict( "Scan:"                => :index, 
-                        "Peptide:"             => :peptide,
-                        "Secondary Score:"     => :score2,
-                        "Score:"               => :score1,
-                        "XL Position 1:"       => :pos1,   
-                        "XL Position 2:"       => :pos2,
-                        "Source File:"         => :source_file,
-                        "Experimental M+H:"    => :mplush,
-                        "Precursor Charge:"    => :prec_charge,
-                        "Peaks Matched alpha:" => :matched_alpha,
-                        "Peaks Matched beta:"  => :matched_beta,
-                        "Retention Time:"      => :retention_time,
-                        "Assessment:"          => :assessment )
+const data_list = OrderedDict( "Scan:"                => :index, 
+                               "Peptide:"             => :peptide,
+                               "Secondary Score:"     => :score2,
+                               "Score:"               => :score1,
+                               "XL Position 1:"       => :pos1,   
+                               "XL Position 2:"       => :pos2,
+                               "Source File:"         => :source_file,
+                               "Experimental M+H:"    => :mplush,
+                               "Precursor Charge:"    => :prec_charge,
+                               "Peaks Matched alpha:" => :matched_alpha,
+                               "Peaks Matched beta:"  => :matched_beta,
+                               "Retention Time:"      => :retention_time,
+                               "Assessment:"          => :assessment )
 
 #
 # Structure to contain scan data
