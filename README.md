@@ -115,6 +115,9 @@ julia> indexes(links[2])
 
 julia> ismatch(indexes(links[2]),(99,131))
 true
+
+julia> ismatch("D108-E143","E143-D108")
+true
 ```
 Thus this function can be used for proper filtering of links by type, for example:
 
