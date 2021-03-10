@@ -7,7 +7,7 @@ using Printf
 
 export Link, getscore, read_all, filter, point_biserial, indomain
 
-export name, resnames, indexes, ismatch,
+export name, resnames, indexes, ismatch, getlink,
        consistency, deuc, dtop, dmax, nscans, 
        maxscore1, avgscore1,
        maxscore2, avgscore2,
@@ -123,6 +123,12 @@ function ismatch(x::Tuple{T,T},y::Tuple{T,T}) where T
   ( (x[1] == y[1] && x[2] == y[2]) ||
     (x[2] == y[1] && x[1] == y[2]) )
 end
+
+# 
+# Allow retrieving links by name (much slower, of course)
+#
+import Base.getindex
+getindex(links::Vector{Link},name::AbstractString) = links[findfirst( link -> ismatch(link.name,name), links )]
 
 consistency(link::Link;tol=0.) = (0. <= link.dtop <= (link.dmax + tol))
 consistency(links::Vector{Link};tol=0) = consistency.(links,tol=tol)
@@ -319,20 +325,6 @@ function read_all(;xml_file = nothing,
 end
 
 #
-# Function that compares two links
-#
-function same_residues(name1,name2)
-  r1 = split(name1,'-')
-  r2 = split(name2,'-')
-  if ( ( r1[1] == r2[1] && r1[2] == r2[2] ) ||  
-       ( r1[2] == r2[1] && r1[1] == r2[2] ) )
-    return true
-  else
-    return false
-  end
-end
-
-#
 # Function that checks if the link belongs to the chosen domain
 #
 function indomain(name,domain)
@@ -419,9 +411,9 @@ function readlog(link,logfile_name)
       residue2_name = oneletter[strip(line[25:29])]
       residue2_index = strip(line[32:36])
       name = residue1_name*residue1_index*'-'*residue2_name*residue2_index
-      deuc = parse(Float64,line[43:51])
-      dtop = parse(Float64,replace(line[52:61],">"=>""))
-      if same_residues(name,link.name)
+      if ismatch(name,link.name)
+        deuc = parse(Float64,line[43:51])
+        dtop = parse(Float64,replace(line[52:61],">"=>""))
         close(file)
         return deuc, dtop
       end
@@ -585,8 +577,8 @@ function read_xml(data_file_name,xic_file_name,domain)
         ival = findfirst(isequal("$field"),data)
         if ! isnothing(ival) && length(data) > ival
           if field == :peptide
-            setfield!(links[ilink].scans[iscan],:pep1,data[ival+1])
-            setfield!(links[ilink].scans[iscan],:pep2,data[ival+3])
+            setfield!(links[ilink].scans[iscan],:pep1,String(data[ival+1]))
+            setfield!(links[ilink].scans[iscan],:pep2,String(data[ival+3]))
           else
             if fieldtype(Scan,field) <: AbstractString
               setfield!(links[ilink].scans[iscan],field,data[ival+1])
