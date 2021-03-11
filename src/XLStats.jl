@@ -47,13 +47,13 @@ const data_list = OrderedDict( "Scan:"                => :index,
 #
 @with_kw mutable struct Scan
   index :: Int = 0
-  pep1 :: AbstractString = ""
-  pep2 :: AbstractString = ""
+  pep1 :: String = ""
+  pep2 :: String = ""
   score1 :: Float64 = 0.
   score2 :: Float64 = 0.
   pos1 :: Int = 0
   pos2 :: Int = 0
-  source_file :: AbstractString = ""
+  source_file :: String = ""
   mplush :: Float64 = 0
   prec_charge :: Int = 0
   matched_alpha :: Int = 0
@@ -578,8 +578,8 @@ function read_xml(data_file_name,xic_file_name,domain)
             setfield!(links[ilink].scans[iscan],:pep1,String(data[ival+1]))
             setfield!(links[ilink].scans[iscan],:pep2,String(data[ival+3]))
           else
-            if fieldtype(Scan,field) <: AbstractString
-              setfield!(links[ilink].scans[iscan],field,data[ival+1])
+            if fieldtype(Scan,field) == String
+              setfield!(links[ilink].scans[iscan],field,String(data[ival+1]))
             else
               fieldvalue = parse(fieldtype(Scan,field),data[ival+1])
               setfield!(links[ilink].scans[iscan],field,fieldvalue)
