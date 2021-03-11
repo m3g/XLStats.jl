@@ -1,12 +1,8 @@
 using XLStats
 using Test
 
-using XLStats
-
-
 data_dir="./data"
 xml_data="$data_dir/hitsDetail.xls"
-xml_data="$data_dir/salbiii_hitsDetail.dat"
 links = read_all(xml_file=xml_data,
                  topolink_log="$data_dir/salbiii_topolink.log",
                  topolink_input="$data_dir/topolink.inp",
@@ -15,49 +11,49 @@ links = read_all(xml_file=xml_data,
 
 @testset "XLStats.jl" begin
 
-  @test name(links[1]) == "K17-K6"
+  @test name(links[1]) == "D3-E53"
 
-  @test indexes(links[13]) == (133, 17)
+  @test indexes(links[13]) == (6, 17)
 
   @test resnames(links[45]) == ("GLU","GLU")
 
-  @test length(links) == 102
+  @test length(links) == 113
 
-  @test sum(nscans(links)) == 1125
+  @test sum(nscans(links)) == 761
 
-  @test count(consistency(links)) == 22
+  @test count(consistency(links)) == 26
 
-  @test sum(maxscore1(links)) ≈ 340.29699999999997
+  @test sum(skipmissing(maxscore1(links))) ≈ 297.84999999999997
 
-  @test sum(maxscore2(links)) ≈ 138.113
+  @test sum(skipmissing(maxscore2(links))) ≈ 86.866
 
-  @test sum(avgscore1(links)) ≈ 154.42675260891815
+  @test sum(skipmissing(avgscore1(links))) ≈ 120.55580639396922
 
-  @test sum(avgscore2(links)) ≈ 56.736571404726476
+  @test sum(skipmissing(avgscore2(links))) ≈ 30.502086812287494
 
-  @test sum(deuc(links)) ≈ 2017.317
+  @test sum(deuc(links)) ≈ 2208.976
 
-  @test sum(dtop(links)) ≈ 2763.8179999999998
+  @test sum(dtop(links)) ≈ 3008.168 
 
-  @test sum(dmax(links)) ≈ 1510.4999999999998
+  @test sum(dmax(links)) ≈ 1680.1999999999998
   
-  @test count(hasxic.(links)) == 32
+  @test count(hasxic.(links)) == 20
 
-  @test sum(maxxic(links)) ≈ 8.5522559799e8
+  @test sum(skipmissing(maxxic(links))) ≈ 6.2237511644e8
 
-  @test sum(avgxic(links)) ≈ 2.4584517959989226e8
+  @test sum(avgxic(links)) ≈ 2.686064260940843e8
 
-  @test sum(nspecies.(links)) == 245
+  @test sum(nspecies.(links)) == 159
 
-  @test sum(count_nspecies.(links,mtol=20.0)) == 231
+  @test sum(count_nspecies.(links,mtol=20.0)) == 154
 
-  @test count(consistency(links,tol=2.0)) == 26
+  @test count(consistency(links,tol=2.0)) == 29
 
-  @test ismatch(resnames(links[2]),("SER","LYS"))
-  @test ismatch(resnames(links[2]),("LYS","SER"))
+  @test ismatch(resnames(links[2]),("ASP","GLU"))
+  @test ismatch(resnames(links[2]),("GLU","ASP"))
 
-  @test ismatch(indexes(links[2]),(99,131))
-  @test ismatch(indexes(links[2]),(131,99))
+  @test ismatch(indexes(links[2]),(3,111))
+  @test ismatch(indexes(links[2]),(111,3))
 
   @test ismatch("D143-E108","D143-E108")
   @test ismatch("D108-E143","D143-E108")
@@ -65,8 +61,8 @@ links = read_all(xml_file=xml_data,
   @test ismatch("D108-D143","D100-E108") == false
 
   @test indomain(links[2],1:131)
-  @test indomain(links[2],1:120) == false
+  @test indomain(links[112],1:120) == false
 
-  @test point_biserial(consistency(links),deuc(links)) ≈ -0.5720743658488596
+  @test point_biserial(consistency(links),deuc(links)) ≈ -0.5950247343012209
 
 end
