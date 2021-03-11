@@ -68,8 +68,6 @@ end
 @with_kw mutable struct Link
 
   name::AbstractString = "None"
-  residue1_index::Int = 0
-  residue2_index::Int = 0
 
   consistency::Bool = false
   deuc::Float64 = 0.
@@ -87,7 +85,7 @@ function Link(name::String,nscans::Int)
   i = parse(Int,str[1][2:end])
   j = parse(Int,str[2][2:end])
   scans = [ Scan() for i in 1:nscans ]
-  Link(name=name, scans=scans, residue1_index=i, residue2_index=j)
+  Link(name=name, scans=scans)
 end
 
 # 
@@ -108,11 +106,11 @@ function resnames(linkname::AbstractString;type=3)
 end
 resnames(link::Link;type=3) = resnames(link.name,type=type)
   
-indexes(link::Link) = (link.residue1_index,link.residue2_index)
 function indexes(linkname::AbstractString)
   name = split(linkname,"-")
   return parse(Int,name[1][2:end]), parse(Int,name[2][2:end])
 end
+indexes(link::Link) = indexes(link.name)
 
 function ismatch(name1::AbstractString,name2::AbstractString)
    ( ismatch(resnames(name1),resnames(name2)) &&
