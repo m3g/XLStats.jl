@@ -304,6 +304,9 @@ function read_all(;xml_file = nothing,
   # Read xml file from SIM-XL
   links = read_xml(xml_file,xic_file_name,domain)
 
+  # Order links by residue index
+  sort!(links,lt=isless_indexes)
+
   # Read topolink input to get the length of the linkers
   for link in links
     link.dmax = getdmax(link,topolink_input)
@@ -321,7 +324,8 @@ function read_all(;xml_file = nothing,
 
   return links
 end
-
+isless_indexes(link1,link2) = ( indexes(link1) < indexes(link2) )
+  
 #
 # Function that checks if the link belongs to the chosen domain
 #
@@ -640,6 +644,11 @@ function setname(line)
   line = replace(line,") - "=>"-")
   line = replace(line,")"=>"")
   name = strip(line)
+  i1, i2 = indexes(name)
+  if i2 < i1
+    newname = split(name,"-")
+    name = newname[2]*"-"*newname[1]
+  end
   return name
 end
 
